@@ -1,5 +1,18 @@
 //Bài tập quản lý tuyển sinh
+//sơ đồ 3 khối
+/**
+ *Đầu vào: điểm chuẩn hội đồng,điểm khu vực,điểm đối tượng, điểm ưu tiên,điểm 1,2,3
 
+
+
+ Các bước xử lý :
+ =>công thức tính tổng điểm =điểm 1+điểm 2+điểm 3+điểm ưu tiên
+ =>điểm ưu tiên=điểm khu vực +điểm đối tượng
+
+
+
+ Đầu ra :tổng điểm và kết  quả xét tuyển 
+ */
 document.getElementById("btnKetQuaTuyenSinh").onclick = function () {
   let hienThi = document.querySelector(".ketquatuyensinh");
   let diemChuan = document.getElementById("diemchuan").value * 1;
@@ -34,14 +47,17 @@ document.getElementById("btnKetQuaTuyenSinh").onclick = function () {
 // TÍNH TIỀN ĐIỆN
 //sơ đồ 3 khối
 /**
- *Đầu vào: so1,so2,so3,so4,so5
+ *Đầu vào: số kw,họ tên
 
 
 
  Các bước xử lý :
- công thức tính trung bình 5 số =(so1+so2+so3+so4+so5)/5
+ công thức tính tiền điện :
+ =>nếu số kw<=50, tiền điện=số kw*500;
+ =>nếu số kw<=100, tiền điện=số 50*500+(số kw-50)*650;
+...
 
- Đầu ra :trung bình của 5 số
+ Đầu ra :họ tên và tiền điện
  */
 const tinhTienDien = (soKw) => {
   if (soKw <= 50) {
@@ -73,14 +89,19 @@ document.querySelector(".btntinhtiendien").onclick = function () {
 // TÍNH THUẾ
 //sơ đồ 3 khối
 /**
- *Đầu vào: tiền USD
+ *Đầu vào: họ tên, tổng thu nhập năm,số người phụ thuộc
 
 
 
  Các bước xử lý :
-công thức quy đổi tiền usd sang tiền việt =23500*soUSD
+=>thu nhập chịu thuế=tongThuNhapNam - 4000000 - soNguoiPhuThuoc * 1600000;
+  tiền thuế thu nhập cá nhân :
+=>nếu số thu nhập chịu thuế<=60, tiền thuế=thu nhập chịu thuế *0.05;
+=>nếu số thu nhập chịu thuế<=120, tiền thuế=thu nhập chịu thuế *0.1;
+...
+...
 
- Đầu ra :tiền Việt
+ Đầu ra :họ tên và tiền thuế thu nhập cá nhân
  */
 const tinhThue = (thuNhapChiuThue) => {
   if (thuNhapChiuThue <= 60) {
@@ -146,7 +167,7 @@ document.querySelector(".btntinhthue").onclick = function () {
  ==> tính tiền cáp cho nhà dân=Phí xử lý hóa đơn+Phí dịch vụ cơ bản+Thuê kênh cao cấp*sokenh
  ==>tính tiền cáp cho doanh nghiệp=Phí xử lý hóa đơn+Phí dịch vụ cơ bản+Thuê kênh cao cấp*sokenh
 
- Đầu ra :diện tích và chu vi của hình chữ nhật
+ Đầu ra :mã khách hàng và tiền caps
  */
 const loaiKhachHangSelect = document.getElementById("loaikhachhang");
 const soKetNoiInput = document.getElementById("soketnoi");
